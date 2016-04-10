@@ -5,10 +5,13 @@ class ParticipantList extends React.Component
 {
   render()
   {
-    const participants = this.props.participants.map(function(participant)
+    const {participants, remove_participant} = this.props;
+    const list = participants.map(function(participant)
     {
       const {name} = participant;
-      return <Participant key={name} name={name} />;
+      const remove = () => remove_participant(name);
+      
+      return <Participant key={name} name={name} remove_participant={remove}/>;
     });
 
     return <div>
@@ -17,7 +20,7 @@ class ParticipantList extends React.Component
           <h3>Participants</h3>
         </div>
       </div>
-      <div className="row">{participants}</div>
+      <div className="row">{list}</div>
     </div>
   }
 };

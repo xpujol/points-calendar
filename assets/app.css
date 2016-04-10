@@ -3790,3 +3790,7 @@ table.hover tr:nth-of-type(even):hover {
 .points-calendar small {
   line-height: 3rem;
 }
+
+.holiday-on, .holiday-off {
+  cursor: pointer;
+}

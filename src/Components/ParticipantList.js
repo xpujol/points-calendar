@@ -6,12 +6,13 @@ class ParticipantList extends React.Component
   render()
   {
     const {participants, remove_participant} = this.props;
-    const list = participants.map(function(participant)
+    const list = participants.map(function(participant, i)
     {
       const {name} = participant;
       const remove = () => remove_participant(name);
+      const isLast = i === (participants.length - 1);
       
-      return <Participant key={name} name={name} remove_participant={remove}/>;
+      return <Participant key={name} name={name} remove_participant={remove} last={isLast} />;
     });
 
     return <div>

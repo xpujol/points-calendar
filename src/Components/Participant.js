@@ -4,9 +4,9 @@ class Participant extends React.Component
 {
   render()
   {
-    const {name, remove_participant} = this.props;
+    const {name, remove_participant, last} = this.props;
 
-    return <div className="medium-2 columns">
+    return <div className={'medium-2 columns' + (last ? ' end' : '')}>
       <div className="profile-card">
         <span onClick={remove_participant} className="profile-delete" style={{marginTop: '0.5rem'}}>
           <i className="fa fa-close" />

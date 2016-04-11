@@ -27,7 +27,7 @@ class Day extends React.Component
       const isAbsent = absent.includes(dayIndex);
       const toggleAbsent = isAbsent ? () => unset_absent(name) : () => set_absent(name);
       return <span onClick={toggleAbsent} style={{marginLeft : '2px'}} key={name} className={'badge badge-medium ' + (isAbsent ? 'alert' : 'success')}>
-        {name[0]}
+        {name.toUpperCase().slice(0,2)}
       </span>;
     });
 
